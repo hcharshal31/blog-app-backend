@@ -6,9 +6,9 @@ const router = Router();
 // const router = express.Router();
 // this way we dont need to import express
 
-const { signup, login } = require("../controllers/authController")
+const { register, login } = require("../controllers/authController")
 
-router.post("/signup", signup);
+router.post("/register", register);
 
 router.post("/login", login);
 

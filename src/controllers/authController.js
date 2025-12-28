@@ -3,7 +3,7 @@ const User = require("../models/user.js");
 const jwt = require("jsonwebtoken");
 require("dotenv");
 
-const signup = async (req, res) => {
+const register = async (req, res) => {
     try{
         const { firstName, lastName, emailId, password, age, gender } = req.body;
         if(!firstName || !lastName || !emailId || !password){
@@ -32,7 +32,7 @@ const signup = async (req, res) => {
         });
 
         res.status(201).json({
-            message: "User registered succussfully",
+            message: "User registered succussfully...",
             user: {
                 id: user._id,
                 firstname: user.firstName,
@@ -43,7 +43,7 @@ const signup = async (req, res) => {
 
     } catch(err) {
         res.status(500).json({
-            message: "Signup failed!",
+            message: "registration failed!",
             error: err.message,
         })
     }
@@ -90,9 +90,12 @@ const login = async (req, res) => {
             jwtToken
          })
     } catch(err){
-
+        res.status(500).json({
+            message: "Login failed!",
+            error: err.message,
+        })
     }
 
 }
 
-module.exports = { signup, login };
+module.exports = { register, login };
