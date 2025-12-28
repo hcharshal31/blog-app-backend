@@ -151,8 +151,7 @@ http://localhost:3000
 - Refresh tokens
 
 ## Author
-Harshal Chavan
-MERN Stack Developer
+Harshal Chavan - MERN Stack Developer
 
 ## Project Status
 - Completed
